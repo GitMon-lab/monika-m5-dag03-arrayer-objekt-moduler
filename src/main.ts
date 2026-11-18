@@ -24,10 +24,26 @@ console.log(`${drycker.join(', ')}  `)
 // UPPGIFT 2: objekt
 // a) skapa const kopp = { namn: "Latte", pris: 45, vegetarisk: true };
 // b) skriv ut kopp.namn och kopp["pris"]
+
 // c) ändra priset till 48, och lägg till egenskapen storlek: "stor"
 //    TypeScript klagar på storlek. Beskriv objektet med en interface där storlek är valfri (storlek?: string).
 // d) skriv ut Object.keys(kopp)
 // TODO
+
+//const kopp = { namn: 'Latte', pris: 45, vegetarisk: true }
+
+interface Kopp {
+    namn: string
+    pris: number
+    vegetarisk: boolean
+    storlek?: string
+}
+const kopp: Kopp = { namn: 'Latte', pris: 45, vegetarisk: true }
+
+console.log(`Kopp ${kopp.namn} ${kopp['pris']}`)
+
+kopp.pris = 48
+kopp.storlek = 'stor'
 
 // UPPGIFT 3: arrayer av objekt
 // a) skriv ut hur många rätter menyn har och namnet på den första
