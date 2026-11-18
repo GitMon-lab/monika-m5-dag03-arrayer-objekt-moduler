@@ -1,5 +1,36 @@
 // Dag 3, del 1: Arrayer och objekt i Console.
 import { meny } from './data'
+import { studentPris } from './rabatt'
+
+/*
+Uppgift 10. Moduler på riktigt
+Skapa en ny fil `src/rabatt.ts` med en exporterad funktion `studentPris(pris)` (10 % rabatt). OK
+Importera den i `src/main.ts` och använd den på menyn. OK
+Prova sedan tre fel med flit och läs felen: ta bort `type="module"` i `index.html`,OK
+
+
+Tagit bort type:module Moduler fungerar inte om du du
+Svar Inget skrivs i console
+  Skriv fel filnamn i `import`, och öppna `index.html` genom att dubbelklicka (utan servern). OK
+
+Svar
+  Uncaught SyntaxError: The requested module '/src/rabatt.ts' does not provide an export named 'studentPriss' (at main.ts:3:10)
+  Anropar studentPris('100A')  Nytt pris NaN not an number
+  Skriv vad varje fel betydde. Syntax error
+
+  Sedan studentpris i menyn finns här nedan
+  */
+
+console.log(`${'Nytt pris ' + studentPris(100)}  `)
+
+let count: number = 0
+console.log('Meny')
+for (const dish of meny) {
+    console.log(
+        `${dish.namn} - ${dish.pris} kr Studentpris: ${studentPris(dish.pris).toFixed(2)} kr`
+    )
+    count++
+}
 
 // UPPGIFT 1: arrayer
 // a) skapa const drycker: string[] = ["Bryggkaffe", "Latte", "Te"];
@@ -69,12 +100,6 @@ tea.pris = 45
 tea.storlek = 'stor'
 
 console.log(tea)
-
-// UPPGIFT 3: arrayer av objekt
-// a) skriv ut hur många rätter menyn har och namnet på den första
-// b) loopa med for...of och skriv ut "namn – pris kr" för varje rätt
-// c) skriv ut namnet på den sista rätten utan att veta antalet (tips: length - 1)
-// TODO
 
 //import { meny } from './data'
 /*  FROM dat-ts
