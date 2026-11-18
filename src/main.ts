@@ -44,6 +44,13 @@ console.log(`Kopp ${kopp.namn} ${kopp['pris']}`)
 
 kopp.pris = 48
 kopp.storlek = 'stor'
+//skriv ut Object.keys(kopp)
+
+console.log(`Kopp Oject.keys: ${Object.keys(kopp)}`)
+console.log(`Kopp Oject.keys: ${kopp.keys(kopp)}`)
+console.log(`kopp ${kopp}`)
+// Alternativ ormaterad JSON-text
+console.log(JSON.stringify(kopp, null, 2))
 
 // UPPGIFT 3: arrayer av objekt
 // a) skriv ut hur många rätter menyn har och namnet på den första
